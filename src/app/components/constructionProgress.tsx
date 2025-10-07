@@ -1,29 +1,43 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { Modal } from "antd";
 
 const ConstructionProgress: React.FC = () => {
-  const totalImages: number = 5;
-  const imagesBuild: string[] = Array.from(
+  const totalImages = 5;
+  const imagesBuild = Array.from(
     { length: totalImages },
     (_, i) => `/assets/build/${i + 1}.png`
   );
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const openModal = (src: string) => {
+    setSelectedImage(src);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
+
   return (
     <div className="bg-white py-8 px-4 sm:py-16 sm:px-8 rounded-xl border h-auto sm:h-80 border-gray-200 shadow-sm">
-      {/* Título */}
       <div>
         <p className="text-sm text-gray-500">Entrega prevista</p>
         <p className="text-2xl font-bold text-gray-800">Em Construção</p>
       </div>
 
-      {/* Divisor */}
       <div className="border-t border-gray-200 my-4"></div>
 
-      {/* Imagens */}
       <div className="flex flex-wrap gap-3 justify-start">
-        {imagesBuild.map((src: string, index: number) => (
+        {imagesBuild.map((src, index) => (
           <div
             key={index}
-            className="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 overflow-hidden rounded-xl"
+            className="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 overflow-hidden rounded-xl cursor-pointer"
+            onClick={() => openModal(src)}
           >
             <img
               src={src}
@@ -33,6 +47,22 @@ const ConstructionProgress: React.FC = () => {
           </div>
         ))}
       </div>
+
+      <Modal
+        open={isModalOpen}
+        onCancel={closeModal}
+        footer={null}
+        centered
+        bodyStyle={{ padding: 0, display: "flex", justifyContent: "center" }}
+      >
+        {selectedImage && (
+          <img
+            src={selectedImage}
+            alt="Imagem da obra selecionada"
+            className="w-[90vw] max-w-[600px] h-auto max-h-[80vh] object-contain rounded"
+          />
+        )}
+      </Modal>
     </div>
   );
 };
