@@ -53,7 +53,7 @@ const ConstructionProgress: React.FC = () => {
         onCancel={closeModal}
         footer={null}
         centered
-        bodyStyle={{ padding: 0, display: "flex", justifyContent: "center" }}
+        width={"auto"}
       >
         {selectedImage && (
           <img
