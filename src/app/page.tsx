@@ -10,56 +10,8 @@ import {
   Users01Icon,
 } from "./styles/icons";
 import { SalesInfo } from "./components/salesinfo";
-
-const ImageGallery: React.FC = () => {
-  const totalImages = 6;
-  const images = Array.from(
-    { length: totalImages },
-    (_, i) => `/assets/galery/${i + 1}.png`
-  );
-
-  return (
-    <div className="rounded-xl">
-      <div className="grid grid-cols-3 gap-4">
-        {images.map((src, index) => (
-          <img
-            key={index}
-            src={src}
-            alt={`Imagem do empreendimento ${index + 1}`}
-            className="w-full h-full object-cover rounded-xl"
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const ConstructionProgress = () => {
-  const totalImages = 5;
-  const imagesBuild = Array.from(
-    { length: totalImages },
-    (_, i) => `/assets/build/${i + 1}.png`
-  );
-  return (
-    <div className="bg-white py-16 px-8 rounded-xl border h-80 border-gray-200 shadow-sm">
-      <div>
-        <p className="text-sm text-gray-500">Entrega prevista</p>
-        <p className="text-2xl font-bold text-gray-800">Em Construção</p>
-      </div>
-      <div className="border-t border-gray-200 my-4"></div>
-      <div className="flex items-center space-x-3">
-        {imagesBuild.map((src, index) => (
-          <img
-            key={index}
-            src={src}
-            alt={`Foto da obra ${index + 1}`}
-            className="w-16 h-16 object-cover rounded-xl"
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
+import ImageGallery from "./components/galery";
+import ConstructionProgress from "./components/constructionProgress";
 
 const cardsListStats = [
   { icon: Users01Icon, title: "Compradores", value: "156" },
@@ -106,7 +58,7 @@ export default function App() {
                 </span>
               </div>
             </div>
-            <div className="flex items-center text-gray-600 font-medium mt-3 sm:mt-0 bg-white  px-3 py-1.5 rounded-md">
+            <div className="flex items-center text-gray-600 font-medium mt-3 sm:mt-0 bg-white px-3 py-1.5 rounded-md border border-gray-300 shadow-[0_1px_2px_rgba(16,24,40,0.05)]">
               <CalendarIcon className="w-4 h-4 mr-2" />
               <span>01/10/2028</span>
             </div>
