@@ -40,9 +40,8 @@ const ConstructionProgress = () => {
     { length: totalImages },
     (_, i) => `/assets/build/${i + 1}.png`
   );
-
   return (
-    <div className="bg-white py-16 px-8 rounded-xl border border-gray-200 shadow-sm">
+    <div className="bg-white py-16 px-8 rounded-xl border h-80 border-gray-200 shadow-sm">
       <div>
         <p className="text-sm text-gray-500">Entrega prevista</p>
         <p className="text-2xl font-bold text-gray-800">Em Construção</p>
