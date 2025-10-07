@@ -8,20 +8,29 @@ const ConstructionProgress: React.FC = () => {
   );
 
   return (
-    <div className="bg-white py-16 px-8 rounded-xl border h-80 border-gray-200 shadow-sm">
+    <div className="bg-white py-8 px-4 sm:py-16 sm:px-8 rounded-xl border h-auto sm:h-80 border-gray-200 shadow-sm">
+      {/* Título */}
       <div>
         <p className="text-sm text-gray-500">Entrega prevista</p>
         <p className="text-2xl font-bold text-gray-800">Em Construção</p>
       </div>
+
+      {/* Divisor */}
       <div className="border-t border-gray-200 my-4"></div>
-      <div className="flex items-center space-x-3">
+
+      {/* Imagens */}
+      <div className="flex flex-wrap gap-3 justify-start">
         {imagesBuild.map((src: string, index: number) => (
-          <img
+          <div
             key={index}
-            src={src}
-            alt={`Foto da obra ${index + 1}`}
-            className="w-16 h-16 object-cover rounded-xl"
-          />
+            className="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 overflow-hidden rounded-xl"
+          >
+            <img
+              src={src}
+              alt={`Foto da obra ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
         ))}
       </div>
     </div>
