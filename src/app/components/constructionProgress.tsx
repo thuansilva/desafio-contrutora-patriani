@@ -53,14 +53,36 @@ const ConstructionProgress: React.FC = () => {
         onCancel={closeModal}
         footer={null}
         centered
-        width={"auto"}
+        closable={false}
+        width="auto"
+        styles={{
+          content: {
+            background: "transparent",
+            boxShadow: "none",
+            padding: 0,
+          },
+          mask: {
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
+          },
+        }}
       >
         {selectedImage && (
-          <img
-            src={selectedImage}
-            alt="Imagem da obra selecionada"
-            className="w-[90vw] max-w-[600px] h-auto max-h-[80vh] object-contain rounded"
-          />
+          <div className="relative">
+            <img
+              src={selectedImage}
+              alt="Imagem da obra selecionada"
+              // className="block w-auto max-w-[900vw] h-auto max-h-[500vh] object-contain"
+              width={500}
+              height={300}
+            />
+            <button
+              onClick={closeModal}
+              className="absolute -top-4 -right-4 sm:top-2 sm:right-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black bg-opacity-50 text-white transition-opacity hover:opacity-80"
+              aria-label="Fechar modal"
+            >
+              <span className="text-2xl leading-none">&times;</span>
+            </button>
+          </div>
         )}
       </Modal>
     </div>

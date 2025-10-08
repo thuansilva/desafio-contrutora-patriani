@@ -106,7 +106,7 @@ export const SalesInfo: React.FC = () => {
         <div className="relative mb-4 sm:mb-0">
           <MultiSegmentDonutChart
             data={[{ value: 80 }, { value: 20 }]}
-            colors={["#9C000D", "#F3F4F6"]}
+            colors={["#9C000D", "#f8f4f2"]}
             size={200}
             strokeWidth={20}
           />
