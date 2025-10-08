@@ -10,15 +10,68 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
 
+  --color-base-white: #ffffff;
+
   --color-alert-surface: #fff2de;
   --color-alert-dark: #e5961e;
 
   --color-gray-dark: #1a1717;
   --color-gray-dark-surface: #f8f4f2;
-  --color-gray-medium: #504d4c;
+  --color-gray-medium-dark: #504d4c;
+  --color-gray-light: #e2dedc;
+
+  --color-neutral-black: #1a1717;
+  --color-neutral-dark-gray: #403e3d;
+  --color-neutral-dark-surface: #f2f1f0;
 
   --color-primary-medium: #c30010;
   --color-primary-dark: #9c000d;
+
+  --color-gray-300: #d0d5dd;
+
+  --color-box-shadow: #1018281a;
+}
+
+@layer components {
+  .heading-lg {
+    @apply font-sans font-bold text-2xl leading-8;
+  }
+
+  .text-sm-semibold {
+    @apply font-sans font-semibold text-sm leading-5 tracking-normal;
+  }
+
+  .text-xs-regular {
+    @apply font-sans font-normal text-xs leading-[18px] tracking-normal;
+  }
+
+  .text-text-sm-medium {
+    @apply font-sans font-medium text-sm leading-5 tracking-normal;
+  }
+
+  .text-xl-semibold {
+    @apply font-sans font-semibold text-xl leading-[30px] tracking-normal;
+  }
+
+  .text-sm-medium {
+    @apply font-sans font-medium text-sm leading-5 tracking-normal;
+  }
+
+  .display-xs-semibold {
+    @apply font-sans font-semibold text-2xl leading-8 tracking-normal;
+  }
+
+  .display-lg-semibold {
+    @apply font-sans font-semibold text-5xl leading-[60px] tracking-[-0.02em] text-center align-middle;
+  }
+
+  .text-md-medium {
+    @apply font-sans font-medium text-base leading-6 tracking-normal;
+  }
+
+  .display-md-semibold {
+    @apply font-sans font-semibold text-[32px] leading-9 tracking-[-0.02em] align-middle;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
