@@ -43,26 +43,27 @@ export default function App() {
 
       <main className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 mt-6">
         <div className="mb-8">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-              <h2 className="text-xl sm:text-2xl font-bold leading-7 sm:leading-8 text-gray-800">
+          <div className="flex flex-col sm:flex-row justify-between items-start mb-4">
+            <div>
+              <h2 className="text-xl sm:text-2xl font-bold heading-lg mb-1">
                 Splendor Jardim
               </h2>
-              <div className="flex items-center text-sm sm:text-base text-gray-500 mt-1 sm:mt-0">
-                <MapPinIcon className="w-4 h-4 mr-1 sm:mr-2" />
+              <div className="flex items-center text-xs-regular text-gray-medium-dark">
+                <MapPinIcon className="w-4 h-4 mr-2" />
                 <span>
                   Rua Doutor Rubens Arruda, 33, Tamanduateí 3 - Santo André
                 </span>
               </div>
             </div>
-            <div className="flex items-center text-sm sm:text-base text-gray-600 font-medium mt-3 sm:mt-0 bg-white px-3 py-1.5 rounded-md border border-gray-300 shadow-[0_1px_2px_rgba(16,24,40,0.05)]">
-              <CalendarIcon className="w-4 h-4 mr-2" />
-              <span>01/10/2028</span>
+
+            <div className="flex items-center text-sm sm:text-base text-neutral-dark-gray font-semibold mt-4 sm:mt-0 bg-base-white px-3 py-1.5 rounded-md border border-gray-300 shadow-sm self-center sm:self-auto">
+              <CalendarIcon className="w-6 h-6 mr-2" />
+              <span className="text-sm-semibold">01/10/2028</span>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {cardsListStats.map((stat, index) => (
             <StatCard
               key={index}
@@ -79,13 +80,13 @@ export default function App() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div>
-            <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4">
+            <h2 className="text-md-medium  text-neutral-black mb-4 ">
               Imagens
             </h2>
             <ImageGallery />
           </div>
           <div>
-            <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4">
+            <h2 className=" text-md-medium text-neutral-black mb-4">
               Andamento da Obra
             </h2>
             <ConstructionProgress />
