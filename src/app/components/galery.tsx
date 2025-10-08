@@ -25,7 +25,7 @@ const ImageGallery: React.FC = () => {
 
   return (
     <div className="rounded-xl">
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-3">
         {images.map((src, index) => (
           <img
             key={index}
