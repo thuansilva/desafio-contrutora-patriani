@@ -26,8 +26,8 @@ const ConstructionProgress: React.FC = () => {
   return (
     <div className="bg-white py-8 px-4 sm:py-16 sm:px-8 rounded-xl border h-auto sm:h-80 border-gray-200 shadow-sm">
       <div>
-        <p className="text-sm text-gray-500">Entrega prevista</p>
-        <p className="text-2xl font-bold text-gray-800">Em Construção</p>
+        <p className="text-sm-semibold text-gray-dark">Entrega prevista</p>
+        <p className="display-md-semibold text-gray-dark">Em Construção</p>
       </div>
 
       <div className="border-t border-gray-200 my-4"></div>
