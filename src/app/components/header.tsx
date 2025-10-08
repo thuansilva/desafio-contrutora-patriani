@@ -1,8 +1,10 @@
 import { CompassIcon } from "../styles/icons";
 
 const Header = () => (
-  <div className="flex flex-wrap justify-between items-center gap-4">
-    <h1 className="text-gray-dark heading-lg">Splendor Jardim</h1>
+  <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+    <h1 className="text-gray-dark heading-lg text-center sm:text-left">
+      Splendor Jardim
+    </h1>
 
     <div
       className="flex 
