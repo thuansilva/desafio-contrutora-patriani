@@ -54,12 +54,15 @@ const ConstructionProgress: React.FC = () => {
         footer={null}
         centered
         closable={false}
-        width="auto"
+        width="95vw"
         styles={{
           content: {
             background: "transparent",
             boxShadow: "none",
             padding: 0,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           },
           mask: {
             backgroundColor: "rgba(0, 0, 0, 0.8)",
@@ -71,16 +74,29 @@ const ConstructionProgress: React.FC = () => {
             <img
               src={selectedImage}
               alt="Imagem da obra selecionada"
-              // className="block w-auto max-w-[900vw] h-auto max-h-[500vh] object-contain"
               width={500}
               height={300}
+              // className="block w-auto max-w-[95vw] h-auto max-h-[90vh] object-contain rounded-lg"
             />
             <button
               onClick={closeModal}
-              className="absolute -top-4 -right-4 sm:top-2 sm:right-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black bg-opacity-50 text-white transition-opacity hover:opacity-80"
+              className="absolute top-2 right-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black bg-opacity-50 text-white transition-opacity hover:opacity-80"
               aria-label="Fechar modal"
             >
-              <span className="text-2xl leading-none">&times;</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                className="h-5 w-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
             </button>
           </div>
         )}
