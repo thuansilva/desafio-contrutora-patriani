@@ -42,13 +42,37 @@ const ImageGallery: React.FC = () => {
         onCancel={closeModal}
         footer={null} // sem botões padrão
         centered
+        closable={false}
+        width="auto"
+        styles={{
+          content: {
+            background: "transparent",
+            boxShadow: "none",
+            padding: 0,
+          },
+          mask: {
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
+          },
+        }}
       >
         {selectedImage && (
-          <img
-            src={selectedImage}
-            alt="Imagem selecionada"
-            className="w-full h-auto rounded"
-          />
+          <div className="relative">
+            <img
+              src={selectedImage}
+              alt="Imagem selecionada"
+              width={500}
+              height={300}
+            />
+            <button
+              onClick={closeModal}
+              className="absolute -top-4 -right-4 sm:top-2 sm:right-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black bg-opacity-50 text-white transition-opacity hover:opacity-80"
+              aria-label="Fechar modal"
+            >
+              <span className="relative bottom-px text-2xl leading-none">
+                &times;
+              </span>
+            </button>
+          </div>
         )}
       </Modal>
     </div>
