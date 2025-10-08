@@ -30,7 +30,10 @@ export const SalesInfo: React.FC = () => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div className="bg-white py-[34px] pr-12 sm:p-6 rounded-xl border border-gray-light shadow-sm flex flex-col sm:flex-row items-center ">
+      <div
+        className="py-[34px] 
+      pr-12bg-white p-6 rounded-xl border border-gray-light shadow-sm flex flex-col sm:flex-row items-center "
+      >
         <div className="relative ">
           <MultiSegmentDonutChart
             data={chartData}
@@ -48,7 +51,11 @@ export const SalesInfo: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-4 sm:mt-0 sm:ml-20 flex flex-col space-y-3 text-sm-medium">
+        <div
+          className="mt-4 items-center sm:mt-0 sm:ml-20 flex flex-col space-y-3 text-sm-medium
+        sm:items-start text-sm-medium
+        "
+        >
           {[
             {
               label: "Disponíveis",
@@ -90,7 +97,12 @@ export const SalesInfo: React.FC = () => {
         </div>
       </div>
 
-      <div className="bg-white py-[34px] pr-12 sm:p-6 rounded-xl border border-gray-light shadow-sm flex flex-col sm:flex-row items-center  ">
+      <div
+        className=" 
+       bg-white py-[34px]  sm:p-6 rounded-xl border border-gray-light shadow-sm flex flex-col sm:flex-row items-center  
+        
+       "
+      >
         <div className="relative mb-4 sm:mb-0">
           <MultiSegmentDonutChart
             data={[{ value: 80 }, { value: 20 }]}
